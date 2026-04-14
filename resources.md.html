@@ -1,0 +1,628 @@
+
+<meta charset="utf-8">
+<style>
+/* palette
+112930 [text]
+EBF2FA [background]
+F46036 [highlight]
+427AA1 [bright]
+395E66 [medium]
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
+
+body
+{
+    color:#08171b;
+    background: rgb(246, 241, 234); 
+    font-family: "Muli", serif;
+    font-weight: 10;    
+    width: 50%;    
+    min-width: 10em;
+    line-height: 130%;
+    padding-left: 1%;    
+    text-justify: newspaper;
+    top: 5%;
+    
+
+}   
+
+
+pre.listing
+{    
+    padding: 0.5em;
+    margin-left:2em;
+    font-family: "Fira Mono", monospace;
+    background: #f9f9f9;
+}
+
+.md code 
+{
+    font-family: "Fira Mono", monospace;
+    background: inherit;     
+}
+
+/* reset heading/link fonts to that of body */
+.md a,
+.md div.title, contents, .md .tocHeader,
+.md .nonumberh1, .md .nonumberh2, .md .nonumberh3, .md .nonumberh4, .md .nonumberh5, .md .nonumberh6,
+.md .shortTOC, .md .mediumTOC, .md .longTOC {
+    font-family: inherit;
+    color: inherit;
+
+}
+
+.md h1::before,
+.md h2::before,
+.md h3::before,
+.md h4::before,
+.md h5::before,
+.md h6::before
+{ 
+    width: 2.5em;
+    max-width: 2.5em;
+    display: inline-block;    
+    margin-left: -3.0em;  
+    color: rgba(16, 19, 26);    
+    font-size: 100%;
+    
+} 
+
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6
+{
+    font-family: "Muli", serif;
+    border: none;
+    font-size: 140%;
+    color: rgb(8, 23, 56);      
+    line-height: 120%;
+    text-justify: none;
+    text-align: left;
+    
+}
+
+.md blockquote
+{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1em;
+    font-style: italic;
+}
+/* 
+blockquote::before
+{
+    content:'"';
+    font-size:200%;
+}
+
+blockquote::after
+{
+    content:'"';
+    font-size:200%;
+} */
+
+.md .admonition.tip::before
+{
+    content: "";
+    
+}
+
+.md .admonition.error::before
+{
+    content: "";
+    
+}
+
+.md .admonition.warning::before
+{ 
+ content: "";   
+}
+
+
+.md .admonition.error,
+.md .admonition.warning,
+.md .admonition.tip
+{
+    background-color: transparent;
+    margin-left: 100%;
+    margin-right: 10%;    
+    border-left: 0px;
+    float: right; 
+    width: 40%;
+    position: absolute;
+    border: 0px solid black;
+    font-size: 70%;
+}
+
+.md .admonition
+{
+    border-left: 0px;
+    background-color: rgba(0,0,0, 0.05);
+
+}
+
+
+.md .admonition.tip
+{
+    background-color: rgba(0,0,0, 0.05); 
+    border: 0px solid black;
+    font-style: italic;
+
+
+}
+
+.md .admonition.warning
+{
+       
+    background-color: rgba(0,0,0, 0.1);
+
+}
+
+.md .admonition.error
+{
+    background-color: rgba(0,0,0, 0.5); 
+    color: white;
+    
+
+}
+
+
+
+
+
+.md a:hover
+{
+    color: #F46036
+}
+
+.md h1
+{    
+    text-transform: uppercase;            
+
+    padding-top: 2em;
+    border-bottom: 0px solid #000000; 
+    width: 100%;
+}
+
+hr 
+{
+    width: 0px;
+}
+
+
+@media screen {
+    body {
+        position: absolute;
+        left: 10%;
+        margin-right: 0px;
+        margin-left: 2em;
+        right: 0px;
+        overflow: auto;
+        max-width: 40em;
+        
+    }
+    
+    .md .longTOC {
+        display: block;
+        /* white-space: nowrap;     */
+        width: 240px;
+        border-right: 1px dashed rgb(211, 210, 210);
+       
+        /* overflow-y:scroll; */
+        font-size: 13px;
+        font-family: inherit;
+        background: rgb(230, 224, 225);
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        bottom:0px;
+        margin: 0px;
+        
+        padding: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-wrap: break-word;
+    }
+
+    .md .tocHeader {
+        display: none;
+    }
+
+    .md .tocTop {
+        display: block;
+    }
+}
+
+
+
+</style>
+
+A complete list of books, articles, blog posts, videos and neat pages that support Data Fundamentals (H), organised by Unit. 
+
+**None of this material is examinable.** It is provided to give you alternative sources of information that might help you understand the course more clearly. You do not need to read or understand *any* of this, but if you struggle with the course the resources may help shed some light.
+
+
+# Formatting
+If the resource is available online (legally) I have included a link to it. Each entry has symbols following it.
+
+* ⨕⨕⨕ indicates difficulty/depth, from ⨕ (easy to pick up intro, no background required) through ⨕⨕⨕⨕⨕ (graduate level textbook, maths heavy, expect equations)
+* ⭐ indicates a particularly recommended resource; 🌟 is a **very strongly recommended** resource and you should look at it.
+
+
+# General
+* [SciPy lecture notes](http://www.scipy-lectures.org/) introduces all of the scientific Python infrastructure and lots of overlap with Data Fundamentals (H) ⨕⨕⨕
+* [Learning AI if you suck at math](https://hackernoon.com/learning-ai-if-you-suck-at-math-8bdfb4b79037) ⨕⨕
+
+
+# Mathematical notation
+*  **Mathematical Notation: A Guide for Engineers and Scientists** by *Edward R. Scheinerman* covers all of the mathematical notation (and more) that we will use in a very concise form.  ⨕ 🌟 
+*  [Deep learning notation](https://github.com/omarsar/deep_learning_notations) covers much of the same terminology and symbols. ⨕⨕
+* [Math As Code: A cheatsheet for Mathematical Notation](https://github.com/Jam3/math-as-code#pipes) A really nice explanation of mathematical notation in terms of simple code (in Javascript, but easily applicable)
+⨕⨕ 🌟
+
+Excerpt from **Math as Code**:
+
+---
+The big Greek `Σ` (Sigma) is for [Summation](https://en.wikipedia.org/wiki/Summation). In other words: summing up some numbers.
+
+$$\sum_{i=1}^{100}i$$
+
+Here, `i=1` says to start at `1` and end at the number above the Sigma, `100`. These are the lower and upper bounds, respectively. The *i* to the right of the "E" tells us what we are summing. In code:
+
+```js
+var sum = 0
+for (var i = 1; i <= 100; i++) {
+  sum += i
+}
+```
+
+The result of `sum` is `5050`.
+
+---
+
+
+
+# Python
+
+If you don't know any Python, you will need to learn some. 
+
+You will need to know:
+* basic syntax: expressions and function calls
+* printing
+* lists
+* dictionaries
+* basic iteration (for, while)
+* functions, parameters
+* (maybe) list comprehensions 
+
+You will not need to know:
+* classes
+* exceptions
+* file handling
+* or anything more advanced
+
+## References
+*  [Python cheat sheet](https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf)  A quick reference card.
+* [learnxinyminutes Python 3](https://learnxinyminutes.com/docs/python3/) A very concise reference
+* [Python for data science cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PythonForDataScience.pdf)A quick reference card with a data science focus. ⭐
+* ["Think Python!" by Allen Downey](http://greenteapress.com/thinkpython2/thinkpython2.pdf) A full textbook on Python. Easy to read.
+* Try the online tutorials at [LearnPython](http://www.learnpython.org/)
+
+
+
+# Jupyter
+We'll be using Jupyter for everything in DF(H). While it's not hard to learn, there are some guides:
+
+* [Jupyter notebook video tutorial](https://www.youtube.com/watch?v=HW29067qVWk)
+* [Jupyter notebook tutorial](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
+* [Keyboard shortcut cheatsheet](https://www.cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/pdf_bw/)
+
+
+# Cheat sheets and API references
+Quick references for getting stuck and coding things up. This covers NumPy and Matplotlib, the two key software libraries we use in DF(H).
+
+
+* [NumPy cheatsheet](https://github.com/juliangaal/python-cheat-sheet/blob/master/NumPy/README.md)
+* [NumPy API reference](https://docs.scipy.org/doc/numpy-1.13.0/reference/)
+* [NumPy user guide](https://docs.scipy.org/doc/numpy-1.13.0/user/basics.html)
+* [Python for Data Science cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PythonForDataScience.pdf)
+* [Another NumPy Cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf)
+* [Introduction to Matplotlib](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html)
+* [Matplotlib command summary](https://matplotlib.org/api/pyplot_summary.html)
+
+
+# Collections of cheat-sheets
+
+* [A large collection of AI/ML/Data science cheat sheets](https://becominghuman.ai/cheat-sheets-for-ai-neural-networks-machine-learning-deep-learning-big-data-678c51b4b463) ⨕⨕
+* [Data science cheatsheet](https://storage.ning.com/topology/rest/1.0/file/get/1211570060?profile=original) Summary of key terms across data science (ML, Big Data, SQL, stats, etc.). Very good overview of the broader field.
+
+# Unit 1: Vectorized computation I 
+## Basic
+* [A visual intro to Numpy](https://jalammar.github.io/visual-numpy/)  nice visual description of what NumPy operations do ⨕⨕⭐
+* [NumPy crash course](https://cs231n.github.io/python-numpy-tutorial/) crash course that covers pretty much everything you need to know about NumPy. ⨕⨕⭐
+* [100 numpy exercises](http://www.labri.fr/perso/nrougier/teaching/numpy.100/index.html) ⨕⨕⭐
+* [NumPy tutorial](http://scipy.github.io/old-wiki/pages/Tentative_NumPy_Tutorial) ⨕⭐
+
+## Advanced
+* [From Python to Numpy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/) ⨕⨕⨕⭐
+* [Introduction to NumPy](https://jakevdp.github.io/PythonDataScienceHandbook/02.00-introduction-to-numpy.html) ⨕⨕
+* [Linear algebra cheat sheet](https://medium.com/towards-data-science/linear-algebra-cheat-sheet-for-deep-learning-cd67aba4526c#.739w4i3m1) ⨕⨕
+* [101 NumPy Exercises for Data Analysis](https://www.machinelearningplus.com/python/101-numpy-exercises-python/) ⨕⨕
+
+
+---
+
+# Unit 2: Vectorized computation II 
+
+## Einsum and arrays
+
+* [Einsum guide: "einsum is all you need"](https://rockt.github.io/2018/04/30/einsum)
+* [Tensor internals, by Fracois Fleuret](https://fleuret.org/dlc/materials/dlc-handout-1-6-tensor-internals.pdf)
+
+## Articles on floating point
+
+## Basic
+
+* [Exposing floating point](https://ciechanow.ski/exposing-floating-point/) ⨕⨕ 🌟 Outstanding article explaining floating point in detail. **Side note: it's worth reading *everything* on https://ciechanow.ski/archives/; they are probably some of the best tutorials ever written on any subject**
+* [Floats are friends](https://www.youtube.com/watch?v=zguLmgYWhM0&feature=youtu.be) Entertaining talk on floating point representations (in Python) 🌟
+* [Floating point and deep learning](https://eigenfoo.xyz/floating-point-deep-learning/)
+* [Interactive float explorer](https://float.exposed/0x44bf9400) Lets you visualise and play with binary representations of floats ⨕ 🌟
+* [Floating point visually explained](http://fabiensanglard.net/floating_point_visually_explained/) ⨕ 🌟
+* [Floating point numbers](http://pmihaylov.com/floating-point-numbers) ⨕
+* [Mike Acton on floating point, more from a gamedev point of view](https://www.altdevarts.com/p/onboarding-floating-point)
+
+## Advanced
+* [A series of fascinating articles on the inner workings of floating point by a Google engineer](https://randomascii.wordpress.com/2012/01/11/tricks-with-the-floating-point-format/) ⨕⨕⨕⭐
+* [What Every Computer Scientist Should Know About Floating Point Numbers](http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html) ⨕⨕⨕
+* [Demystifying floating point precision](https://blog.demofox.org/2017/11/21/floating-point-precision/) ⨕⨕
+* [Herbie: fixes floating point issues](https://herbie.uwplse.org/) This software can rearrange floating point issues to reduce errors automatically  ⨕⨕⨕⨕
+* [Alternatives to floating point: Posits](https://spectrum.ieee.org/floating-point-numbers-posits-processor) and [Posits/unums documnetation](http://www.johngustafson.net/pdfs/BeatingFloatingPoint.pdf)
+
+### Advanced (NumPy)
+* [Advanced NumPy](http://www.scipy-lectures.org/advanced/advanced_numpy/) ⨕⨕⨕⨕ 
+* [NumPy tricks](http://arogozhnikov.github.io/2015/09/30/NumpyTipsAndTricks2.html) and [Part I](http://arogozhnikov.github.io/2015/09/29/NumpyTipsAndTricks1.html) ⨕⨕⨕⨕⨕
+
+---
+
+# Unit 3: Visualisation
+
+## Basic
+
+### Key online books
+* [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/) Claus O. Wilke  ⨕⨕ 🌟
+* [Layered Grammar of Graphics](http://vita.had.co.nz/papers/layered-grammar.pdf) (long, but detailed) ⨕⨕⨕
+
+## Aesthetics
+* [An important GIF. Watch this](https://gfycat.com/ImprobableFemaleBasenji) ⨕ 🌟
+* [Ten simple rules for better figures](http://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003833&type=printable) (and the accompanying [video](https://www.youtube.com/watch?v=p7Mj-4kASmI)) (recommended; read this and watch the video) ⨕ 🌟
+
+* [Graphics Principles Cheat Sheet](https://www.psiweb.org/docs/default-source/2018-psi-conference-posters/48-julie-jones.pdf?sfvrsn=cb68dedb_4)  ⨕ 🌟
+* [Grammar of graphics cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) ⨕⨕
+
+
+## Matplotlib
+* [Top 50 matplotlib Visualizations – The Master Plots (with full python code)](https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/) ⨕⨕
+* [Simple Matplotlib cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf) ⨕
+* [Introduction to Matplotlib](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html) ⨕⨕
+* [Matplotlib command summary](https://matplotlib.org/api/pyplot_summary.html) ⨕⨕
+* [Extensive matplotlib cheatsheet](http://nbviewer.jupyter.org/urls/gist.githubusercontent.com/Jwink3101/e6b57eba3beca4b05ec146d9e38fc839/raw/f486ca3dcad44c33fc4e7ddedc1f83b82c02b492/Matplotlib_Cheatsheet ⨕
+) ⨕⨕⨕ 
+### Visualisation
+
+* [Effective use of colour in scientific visualisation](https://www.slideshare.net/RileyXBrady/effective-use-of-color-in-scientific-visualization)  ⨕
+* [How to choose a chart for data](http://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf) ⨕⨕
+
+### Example visualisations
+
+* [Randal Olson's blog](http://www.randalolson.com) has many, many examples of good visualization, mainly using Python for graph preparation. ⨕
+
+### Uncertainty
+* [The Hacker's Guide to uncertainty visualisation] (https://erikbern.com/2018/10/08/the-hackers-guide-to-uncertainty-estimates.html) ⨕ 🌟
+* [Understanding the Box plot](https://medium.com/@GalarnykMichael/understanding-boxplots-5e2df7bcbd51) Very thorough discussion of what Box plots are and how they should be used. ⨕⨕
+
+## Advanced
+
+### Books
+* **The Grammar of Graphics,** *Leland Wilkinson*, Second ed. ⨕⨕⨕⨕ 
+* **How to Lie with Statistics** *Darrel Huff* (short, easy to read, worth reading) ⨕⭐
+* **Information Visualization: Perception for Design** *Colin Ware*: a serious book on advanced visualisations.⨕⨕⨕ 
+* The "Tufte" books
+    * **The Visual Display of Quantitative Information** by *Edward Tufte*⨕⨕⨕
+    * **Visual Explanations: Images and Quantities, Evidence and Narrative** by *Edward Tufte*⨕⨕⨕
+    * **Envisioning Information** by *Edward Tufte*⨕⨕⨕
+    * **Beautiful Evidence** by *Edward Tufte*⨕⨕⨕
+
+
+# Unit 4: Computational Linear Algebra I
+## Primers
+* [How word embeddings work](https://www.youtube.com/shorts/FJtFZwbvkI4) A tiny one minute video on word embeddings. ⨕ ⭐
+* [What are embeddings](https://simonwillison.net/2023/Oct/23/embeddings/) A nice blog on who data gets turned into "embeddings" (vectors) for software engineers ⨕
+* [mm: visualise matrix multiplication](https://pytorch.org/blog/inside-the-matrix/?utm_content=265147245&utm_medium=social&utm_source=twitter&hss_channel=tw-776585502606721024) A really nice way to visualise matrix multiplication 🌟
+* [A programmers introduction to matrix multiplication](https://betterexplained.com/articles/matrix-multiplication/) Why matrix multiplies are used, and how to think about them from a CS perspective. ⨕
+* **WATCH THIS** [3blue1brown Linear Algebra series (strongly recommended)](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) ⨕ 🌟 
+* [An introduction to linear algebra](https://jeremykun.com/2011/06/19/linear-algebra-a-primer/) *Jeremy Kun* ⨕⨕⨕⭐
+* [A primer on inner product spaces](https://jeremykun.com/2011/07/25/inner-product-spaces-a-primer/) *Jeremy Kun* ⨕⨕⨕
+* [A discussion of word embeddings on Computerphile](https://www.youtube.com/watch?v=gQddtTdmG_8&list=WL&index=58) ⨕⨕
+
+## High-dimensional spaces
+This can be mind-bending. Some further reading and viewing:
+
+#### Interactive 
+* [Are you normal? Why everyone is weird](https://brilliant.org/lesson/are-you-normal/) explains why everyone is far from the "average" in high-dimensional spaces. ⨕ 🌟
+
+#### Videos
+* [AI experiments: Visualizing high dimensional spaces](https://www.youtube.com/watch?v=wvsE8jm1GzE) ⨕⭐
+* [Why is the Euclidean distance not a good metric in high dimensions](https://stats.stackexchange.com/questions/99171/why-is-euclidean-distance-not-a-good-metric-in-high-dimensions/99191#99191)
+* [3blue1Brown A Trick to Visualizing Higher Dimensions](https://youtu.be/zwAD6dRSVyI) ⨕⨕ 🌟
+
+#### Texts
+* [Why average design doesn't work](https://www.thestar.com/news/insight/2016/01/16/when-us-air-force-discovered-the-flaw-of-averages.html) ⨕ 🌟 High-dimensional spaces desribed in a light article by the Toronto Star (!)
+* [High-dimensional spaces chapter](https://www.cs.cmu.edu/~venkatg/teaching/CStheory-infoage/chap1-high-dim-space.pdf) ⨕⨕⨕
+* [A high-dimensional sphere pokes out of its enclosing box](https://stanislavfort.com/blog/sphere-spilling-out/) ⨕⨕⨕
+* [Geometry in Very High Dimension](https://www.math.wustl.edu/~feres/highdim) ⨕⨕⨕⨕
+* [On the Surprising Behavior of Distance Metrics in High Dimensional Space](https://bib.dbvis.de/uploadedFiles/155.pdf) ⨕⨕⨕⨕⨕
+
+
+## Books
+*  [**Linear Algebra Done Right**, *Sheldon Axler* a more pure mathematics perspective. **NOW FREE ONLINE TEXTBOOK**](https://linear.axler.net/) ⨕⨕⨕
+* [Mathematics for Machine Learning](https://mml-book.github.io/book/mml-book.pdf) Free, online textbook that covers these topics well.
+* [A Programmers' Introduction to Mathematics](https://www.amazon.co.uk/Programmers-Introduction-Mathematics-Dr-Jeremy/dp/1727125452) Jeremy Kun's excellent exploration of pure mathematical topics from a CS perspective.
+* [**Introduction to Applied Linear Algebra**](http://vmls-book.stanford.edu/vmls.pdf) freely available. *Stephen Boyd and Lieven Vandenberghe*⨕⨕⨕⭐
+* **Coding the Matrix** *Phillip N. Klein* An excellent and thorough introduction to linear algebra through Python programming⨕⨕⨕
+
+
+# Unit 5: Computational Linear Algebra II 
+
+* [Matrices and probabilities as graphs](https://www.math3ma.com/blog/matrices-probability-graphs) Conceptual introduction to thinking about the interchange between probabilities, graphs and matrices ⨕⭐
+## Eigenvectors
+* [**What are eigenvalues?**](https://nhigham.com/2022/11/08/what-is-an-eigenvalue/) ⨕⨕⨕
+* [**A tutorial on principal components analysis**](https://arxiv.org/pdf/1404.1100.pdf) ⨕⨕⨕⭐
+* [**Eigenvectors and eigenvalues**](http://setosa.io/ev/eigenvectors-and-eigenvalues/) ⨕⨕⭐
+* [**An introduction to principal components and the geometric interpretation of the covariance matrix**](http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/) ⨕⨕⨕
+* [**Linear algebra for data scientists**](https://kyunghyuncho.me/linear-algebra-for-data-science/) ⨕⨕⨕⨕
+
+## Beyond the course
+* [**A tutorial on spectral graph theory and graph Laplacians**](https://csustan.csustan.edu/~tom/Clustering/GraphLaplacian-tutorial.pdf) ⨕⨕⨕⨕⨕
+
+
+## The SVD
+* [An introduction to the SVD and its widely used applications](https://towardsdatascience.com/an-introduction-to-svd-and-its-widely-used-applications-f5b8f19cb6cb) Short, simple blog post on the SVD ⨕⨕ 🌟
+* [**Matrix decompositions**](http://nicolas-hug.com/blog/matrix_facto_1) ⨕⨕ 🌟
+* [**A tutorial on the singular value decomposition**](https://blog.statsbot.co/singular-value-decomposition-tutorial-52c695315254) ⨕⨕⨕⭐
+o* [Toward an exploratory medium for mathematics](http://cognitivemedium.com/emm/emm.html) intuitive geometric explanation of the SVD⨕⨕⨕⭐
+* [SVD part 1](https://jeremykun.com/2016/04/18/singular-value-decomposition-part-1-perspectives-on-linear-algebra/) *Jeremy Kun*⨕⨕⨕
+* [SVD part 2](https://jeremykun.com/2016/05/16/singular-value-decomposition-part-2-theorem-proof-algorithm/) *Jeremy Kun*⨕⨕⨕
+* [**The Singular Value Decomposition**](http://theory.stanford.edu/~tim/s15/l/l9.pdf) ⨕⨕⨕⨕ 
+
+### Books
+* [**The Matrix Cookbook**](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) *Kaare Brandt Petersen and Michael Syskind Pedersen*. If you need to do a tricky calculation with matrices, this book will probably tell you how to do it.⨕⨕⨕⨕⨕# 
+* **Introduction to Linear Algebra** *Gilbert Strang* The standard textbook on linear algebra⨕⨕⨕⨕
+* **A First Course in Numerical Methods** *Uri M. Ascher and Chen Greif*⨕⨕⨕⨕ 
+
+
+# Unit 6: Numerical Optimization I 
+
+
+* [**On the Origin of Circuits**](https://www.damninteresting.com/on-the-origin-of-circuits/) covers genetic algorithms ⨕ ⭐
+* [**Algorithms for Optimization**](https://algorithmsbook.com/optimization/files/optimization.pdf) A full book on optimization that is very complete and reasonably readable. Free online. ⨕⨕⨕
+* [**Khan academy: Multivariable calculus**](https://www.khanacademy.org/math/multivariable-calculus), particularly "Thinking about multivariable functions", "Derivatives of multivariable functions" and "Applications of multivariable derivatives" 
+* [**Why have Sex? Information Acquisition and Evolution**](http://www.inference.org.uk/mackay/itprnn/ps/265.280.pdf) ⨕⨕⨕⨕ 
+
+## Books
+* **When least is best: How Mathematicians Discovered Many Clever Ways to Make Things as Small (or as Large) as Possible** *by Paul J. Nahin* An interesting and mathematically thorough description of the history of optimisation from a mathematical standpoint.⨕⨕⨕⨕
+* **The Blind Watchmaker** *Richard Dawkins* An excellent popular science book on how evolution (genetic algorithms in the wild) can work, including some early computer simulations.
+
+# Unit 7: Numerical Optimization II 
+
+## Gradient descent
+
+
+* [**Gradient based optimization**](https://exploringpirate.wordpress.com/2017/08/16/gradient-based-optimization/) ⨕⭐
+* [**The gradient, the Jacobian, and the Hessian**](https://carmencincotti.com/2022-08-15/the-jacobian-vs-the-hessian-vs-the-gradient/) ⨕⨕⨕
+* [**An overview of gradient descent optimization algorithms**](http://ruder.io/optimizing-gradient-descent/index.html#gradientdescentvariants) ⨕⨕
+* [**An introduction to algorithms for continuous optimization**](http://www.numerical.rl.ac.uk/people/nimg/course/lectures/paper/paper.pdf) by Nicholas Gould⨕⨕⨕⨕⨕
+* [**What is backpropagation**](https://www.youtube.com/watch?v=Ilg3gGewQ5U) if you want more detail on how first-order optimisation is used in deep learning.⨕⨕
+* [**Matrix calculus**](Matrix calculus (for advanced stuff): https://explained.ai/matrix-calculus/index.html) If you want to understand matrix calculus better ⨕⨕⨕⨕⨕
+* [**Ways of optimising gradient descent**](https://ruder.io/optimizing-gradient-descent/)
+
+
+## Automatic differentiation
+* [**Adventures in a differentiable wonderland**](https://twitter.com/s_scardapane/status/1572239364545187842?s=20&t=2b1W8D6Ok2DfVw23Q9H1Nw)
+* [**Backprop from scratch**](https://www.youtube.com/watch?v=VMj-3S1tku0)
+* [**Automatic differentiation from scratch**](https://thenumb.at/Autodiff/)
+* [**Micrograd: a tiny autodiff implementation**](https://github.com/karpathy/micrograd)
+* [**How machines learn**](https://www.youtube.com/watch?v=IHZwWFHWa-w) *3blue1brown strikes again*⨕ 🌟 **Recommended: WATCH THIS**
+* **[Introduction to automatic differentiation](https://alexey.radul.name/ideas/2013/introduction-to-automatic-differentiation/) ⨕⨕⨕⭐
+* **[Forward mode automatic differentiation tutorial](https://mostafa-samir.github.io/auto-diff-pt1/)** and **[Backward mode automatic differentiation tutorial](https://mostafa-samir.github.io/auto-diff-pt2/)** explains how to implement your own auto-diff on top of NumPy ⨕⨕⭐
+* [The gory details of how automatic differentiation really works for the really interested](http://videolectures.net/deeplearning2017_johnson_automatic_differentiation/)  ⨕⨕⨕⨕⨕
+* [**Elements of differentiable programming]**](https://arxiv.org/pdf/2403.14606) Interesting, detailed, but intense look at autodiff ⨕⨕⨕⨕⨕
+
+## Pareto optimality
+
+* **[The best Mario Kart character according to data science](https://www.datasciencecentral.com/profiles/blogs/the-best-mario-kart-character-according-to-data-science-2)**⨕ 🌟
+
+# Unit 8: Probability & Stochastics I 
+
+---
+
+## Probability
+* [Probability by Peter Norvig](http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb) ⨕⨕ 🌟
+* [Joint, marginal and conditional explorer](https://github.com/GeostatsGuy/PythonNumericalDemos/blob/master/Interactive_MarginalJointConditional.ipynb) ⨕⨕
+
+
+
+## Bayesian thinking and Bayes' rule
+* [A visual guide to Bayesian thinking](https://www.youtube.com/watch?v=BrK7X_XlGB8) ⨕ 🌟
+* [Veritasium explains Bayes' Theorem](https://www.youtube.com/watch?v=R13BD8qKeTg)   ⨕
+* [Count Bayesie's guide to Bayesian statistics](https://www.countbayesie.com/blog/2016/5/1/a-guide-to-bayesian-statistics) *A collection of very readable articles by Count Bayesie*⨕⨕⨕⭐
+* [Video by author of Think Bayes](**Video by same author** https://www.youtube.com/watch?v=TpgiFIGXcT4) ⨕⨕
+* [Khan Academy materials on probability](https://www.khanacademy.org/math/statistics-probability/probability-library) (more in depth than we cover, but high quality stuff) ⨕⨕⨕ 
+* [Bayesian Statistics without Frequentist Language](https://www.youtube.com/watch?v=yakg94HyWdE&t=1207s) ⨕⨕⨕⨕
+* [Entropy and information theory](https://moultano.wordpress.com/2010/10/23/a-short-simple-introduction-to-3kbzhsxyg4467-7/) ⨕⨕
+* [A gentle introduction to random variable algebra (video tutorial)](https://www.youtube.com/watch?v=6BklWi2b6vY) 15 minute video explaining how to do algebra on random variables ⨕
+
+## Beyond the course
+These provide a formal basis for probability theory, if you feel more comfortable
+having a rigorous mathematical basis. These go way beyond the course.
+
+
+* [A formal introduction to probability for Scientists and Engineers](https://betanalpha.github.io/assets/case_studies/probability_theory.html) ⨕⨕⨕⨕⨕
+* [Conditional Probability Theory (For Scientists and Engineers)](https://betanalpha.github.io/assets/case_studies/conditional_probability_theory.html) ⨕⨕⨕⨕⨕
+* [What is entropy? by John Baez, linking physics and information theory](http://math.ucr.edu/home/baez/what_is_entropy.pdf/) ⨕⨕⨕⨕
+    
+## Books
+* [Probability in the real world](https://www.stat.berkeley.edu/~aldous/Real-World/book_april_2015.pdf) A very interesting book on how probability relates to real-world problems. ⨕⨕⨕
+* [Probability and statistics cookbook](http://statistics.zone/) ⨕⨕⨕ Like the Matrix Cookbook, this provides a dense, quick reference to many problems in statistics and probability.
+* **[Think Bayes](http://www.greenteapress.com/thinkbayes/thinkbayes.pdf)**, *Allen B. Downey* light, Python focused⨕⨕⭐
+* All of Statistics: A Concise Course in Statistical Inference *Larry Wasserman* *Outstanding; but somewhat maths heavy.*⨕⨕⨕⨕⨕⭐ 
+* [Introduction to Probability for Computing](https://www.cs.cmu.edu/~harchol/Probability/book.html) A full text book on probability for computer scientists ⨕⨕⨕⨕
+* [Chapters 2](http://www.inference.org.uk/mackay/itprnn/ps/22.40.pdf) [and 3](http://www.inference.org.uk/mackay/itprnn/ps/47.59.pdf) of Information Theory, Inference, and Learning Algorithms by David Mackay⨕⨕⨕⨕ 
+* **A First Course in Probability ** *by Sheldon Ross* (standard textbook on probability) ⨕⨕⨕
+### Beyond the course
+* **[Probability theory: the logic of science](https://bayes.wustl.edu/etj/prob/book.pdf)** by *E. T. Jaynes* *an excellent but controversial and very technical book*⨕⨕⨕⨕⨕
+* **[Information Theory, Inference and Learning Algorithms](http://www.inference.org.uk/itprnn/book.pdf)**, *David Mackay* *Also excellent and covers many interesting relation between probability, information and learning*⨕⨕⨕⨕⨕
+* [**Introduction to statistical learning**](http://www-bcf.usc.edu/~gareth/ISL/) (outstanding introduction to statistical learning, including a book, video and course notes) ⨕⨕⨕⨕
+
+
+# Unit 9: Probability & Stochastics II  
+* [A video on Bayesian sampling to play Battleship](https://www.youtube.com/watch?v=LbALFZoRrw) very similar in spirit to the lab exercise from Vsauce2 ⨕⭐
+* [Why would I ever need Bayesian statistics](https://medium.com/@peadarcoyle/why-would-i-ever-need-bayesian-statistics-4cf844c4a23a) ⨕⨕
+* [MCMC for dummies](http://twiecki.github.io/blog/2015/11/10/mcmc-sampling/) ⨕⨕⨕⭐
+* [Bayesian Linear Regression](https://www.chrisstucchio.com/blog/2017/bayesian_linear_regression.html) This is what the example above is based on.⨕⨕⨕⨕
+* [The Non-parametric Bootstrap as a Bayesian Model](http://www.sumsar.net/blog/2015/04/the-non-parametric-bootstrap-as-a-bayesian-model/) How the bootstrap can be seen as Bayesian model⨕⨕⨕⨕
+* [A first course in Monte Carlo sampling](https://arxiv.org/pdf/2405.16359) A full course on Monte Carlo sampling. See chapter 4 for Metropolis-Hastings. ⨕⨕⨕⨕
+
+## Books
+* [Bayesian methods for Hackers](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers) a full "book" on Bayesian methods and inference ⨕⨕⨕⨕⭐
+* Statistical Rethinking, *Richard McElreath* An excellent introductory textbook on Bayesian inference ⨕⨕⨕⭐
+
+# Unit 10: Digital Signals and Time Series 
+
+## Videos
+* [But what is the Fourier Transform?](https://www.youtube.com/watch?v=spUNpyF58BY) 3Blue1Brown ⭐
+* [But what is a convolution?](https://www.youtube.com/watch?v=KuXjwB4LzSA) 3Blue1Brown ⭐
+* [The algorithm that transfomed the world](https://www.youtube.com/watch?v=nmgFG7PUHfo) Vertiasium and the Fourier Transform ⨕
+* [The intuition behind the Fourier transform](https://www.youtube.com/watch?v=3gjJDuCAEQQ) ⨕⨕
+
+## Examples of the FFT applied 
+* [Building a pitch shifter](https://www.youtube.com/watch?v=PjKlMXhxtTM&list=WL&index=60) an interesting video on how sampling and the Fourier transform can be used in practice. ⨕
+* [How Lora modulation works](https://www.youtube.com/watch?v=jHWepP1ZWTk) ⨕⨕ (shows a practical application of the FFT in radio comms) 
+
+
+## References
+* [Sampling, Quantization and Encoding](http://kaushanim.blogspot.co.uk/2010/03/sampling-quantization-encoding.html) (short introduction to sampling and quantization) ⨕⨕⭐
+* [DSP for the Braindead](http://yehar.com/blog/?p=121) (not actually for the braindead, in fact much more advanced than we cover here!) ⨕⨕⨕
+
+## Books
+* **The Scientist and Engineer's Guide to Signal Processing** http://dspguide.com/ (free, online book) ⨕⨕⨕
+* **Digital Signal Processing, A Computer Science Perspective**, *Jonathan (Y) Stein* A great introduction for CS students, but fantastically expensive.
+
+<!-- --><p></p>
+
+<script>
+  window.markdeepOptions = {tocStyle:'medium'};</script>
+
+  <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+  
